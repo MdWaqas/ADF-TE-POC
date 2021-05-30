@@ -4,13 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>ADF_TE_POC</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <!-- <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>E:\ADF\ADF-TE-POC\ADF-TE-POC\ADF-TE-POC.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>E:\ADF\ADF-TE-POC\ADF-TE-POC\ADF-TE-POC.xml</DocumentationFile>
-  </PropertyGroup>
+  </PropertyGroup> -->
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.6" />

@@ -9,7 +9,7 @@ namespace ADF_TE_POC.IntegrationTests
     {
         public static InventoryContext Create()
         {
-            var options = new DbContextOptionsBuilder<InventoryContext>().UseSqlServer("Data Source=CONFIZ-4418;Initial Catalog=Adf-Poc;Persist Security Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;").Options;
+            var options = new DbContextOptionsBuilder<InventoryContext>().UseSqlServer("Data Source=tcp:nuhealthpartners-dev.database.windows.net,1433;Initial Catalog=Adf-Poc;Persist Security Info=True;User ID=mihealteam-dev;Password=M9&#B-u!3%B4+9kW;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;").Options;
             var context = new InventoryContext(options);
             return context;
         }

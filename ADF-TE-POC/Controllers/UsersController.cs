@@ -36,8 +36,9 @@ namespace ADF_TE_POC.Controllers
         public async Task<IActionResult> Token(TokenRequest request)
         {
             var validUser = await _userService.Validate(request.Email, request.Password);
-            if (validUser==null)
+            if (validUser == null)
                 return Unauthorized("Invalid email or password.");
+
             var token = GenerateJwt(validUser);
             return Ok(new
             {

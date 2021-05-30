@@ -127,5 +127,123 @@
             <param name="app">The application.</param>
             <exception cref="T:System.ArgumentNullException">app</exception>
         </member>
+        <member name="T:ADF_TE_POC.Controllers.ProductsController">
+            <summary>
+            Products Controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.#ctor(ADF_TE_POC.Services.IProductService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADF_TE_POC.Controllers.ProductsController"/> class.
+            </summary>
+            <param name="productService">The product service.</param>
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.Get">
+            <summary>
+            Gets this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.Get(System.Int32)">
+            <summary>
+            Gets the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.Post(ADF_TE_POC.DTOs.ProductRequest)">
+            <summary>
+            Posts the specified product request.
+            </summary>
+            <param name="productRequest">The product request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.Put(System.Int32,ADF_TE_POC.DTOs.ProductRequest)">
+            <summary>
+            Puts the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="productRequest">The product request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Controllers.ProductsController.Delete(System.Int32)">
+            <summary>
+            Deletes the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADF_TE_POC.Services.Impl.ProductService">
+            <summary>
+            Product Service
+            </summary>
+            <seealso cref="T:ADF_TE_POC.Services.IProductService" />
+        </member>
+        <member name="F:ADF_TE_POC.Services.Impl.ProductService._inventory">
+            <summary>
+            The inventory
+            </summary>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.#ctor(ADF_TE_POC.Models.InventoryContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADF_TE_POC.Services.Impl.ProductService"/> class.
+            </summary>
+            <param name="inventory">The inventory.</param>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.Get">
+            <summary>
+            Gets this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.Get(System.Int32)">
+            <summary>
+            Gets the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.Insert(ADF_TE_POC.Models.Product)">
+            <summary>
+            Inserts the specified product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.Update(ADF_TE_POC.Models.Product)">
+            <summary>
+            Updates the specified product.
+            </summary>
+            <param name="product">The product.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.ProductService.Delete(System.Int32)">
+            <summary>
+            Deletes the specified identifier.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADF_TE_POC.Services.Impl.UserServices">
+            <summary>
+            User Service
+            </summary>
+            <seealso cref="T:ADF_TE_POC.Services.IUserService" />
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.UserServices.#ctor(ADF_TE_POC.Models.InventoryContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ADF_TE_POC.Services.Impl.UserServices"/> class.
+            </summary>
+            <param name="inventory">The inventory.</param>
+        </member>
+        <member name="M:ADF_TE_POC.Services.Impl.UserServices.Validate(System.String,System.String)">
+            <summary>
+            Validates the specified email.
+            </summary>
+            <param name="email">The email.</param>
+            <param name="password">The password.</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

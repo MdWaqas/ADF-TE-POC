@@ -5,16 +5,18 @@
 
 trigger:
 - master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+
 jobs:
 - job: Build
-
-  pool:
-    vmImage: 'windows-latest'
-
-  variables:
-    solution: '**/*.sln'
-    buildPlatform: 'Any CPU'
-    buildConfiguration: 'Release'
 
   steps:
   - task: NuGetToolInstaller@1
@@ -61,17 +63,17 @@ jobs:
       codeCoverageTool: 'Cobertura'
       summaryFileLocation: $(Build.SourcesDirectory)/coverlet/reports/Cobertura.xml
 
-  - task: PublishSymbols@2
-    inputs:
-      SearchPattern: '**/bin/**/*.pdb'
-      PublishSymbols: false
-    continueOnError: true
+  # - task: PublishSymbols@2
+  #   inputs:
+  #     SearchPattern: '**/bin/**/*.pdb'
+  #     PublishSymbols: false
+  #   continueOnError: true
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: '$(Parameters.ArtifactName)'
-    condition: succeededOrFailed()
+  # - task: PublishBuildArtifacts@1
+  #   inputs:
+  #     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  #     ArtifactName: '$(Parameters.ArtifactName)'
+  #   condition: succeededOrFailed()
 
 - job: Deploy
   dependsOn:

@@ -80,6 +80,7 @@ jobs:
   - Build
 
   steps:
+  - checkout: none
   - task: AzureWebApp@1
     inputs:
       azureSubscription: 'Confiz-SPM'

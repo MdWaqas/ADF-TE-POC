@@ -66,6 +66,9 @@ jobs:
     condition: succeededOrFailed()
 
 - job: Deploy
+  dependsOn:
+  - Build
+
   steps:
   - task: AzureWebApp@1
     inputs:

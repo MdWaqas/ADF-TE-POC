@@ -6,17 +6,18 @@
 trigger:
 - master
 
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+
 jobs:
 - job: Build
-  
-  pool:
-    vmImage: 'windows-latest'
 
-  variables:
-    solution: '**/*.sln'
-    buildPlatform: 'Any CPU'
-    buildConfiguration: 'Release'
-  
   steps:
   - task: NuGetToolInstaller@1
 
@@ -33,7 +34,7 @@ jobs:
 
   - task: ArchiveFiles@2
     inputs:
-      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
       includeRootFolder: true
       archiveType: 'zip'
       archiveFile: '$(Build.BuildId).zip'
@@ -79,13 +80,13 @@ jobs:
   - Build
 
   steps:
-  # - task: AzureWebApp@1
-  #   inputs:
-  #     azureSubscription: 'Confiz-SPM'
-  #     appType: 'webApp'
-  #     appName: 'adf-poc'
-  #     package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-  #     deploymentMethod: 'auto'
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: 'Confiz-SPM'
+      appType: 'webApp'
+      appName: 'adf-poc'
+      package: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+      deploymentMethod: 'auto'
   - task: AzureRmWebAppDeployment@4
     displayName: 'Azure App Service Deploy: adf-poc'
     inputs:

@@ -83,14 +83,14 @@ jobs:
       azureSubscription: 'Confiz-SPM'
       appType: 'webApp'
       appName: 'adf-poc'
-      package: '$(build.artifactstagingdirectory)/**/*.zip'
+      package: '$(Build.BinariesDirectory)/$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
       deploymentMethod: 'auto'
   - task: AzureRmWebAppDeployment@4
     displayName: 'Azure App Service Deploy: adf-poc'
     inputs:
       azureSubscription: 'Confiz-SPM'
       WebAppName: 'adf-poc'
-      package: '$(build.artifactstagingdirectory)/**/*.zip'
+      package: '$(Build.BinariesDirectory)/$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
       JSONFiles: '**/appsettings.json'
 
   - task: DotNetCoreCLI@2

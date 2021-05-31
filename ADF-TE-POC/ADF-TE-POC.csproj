@@ -5,14 +5,10 @@
     <RootNamespace>ADF_TE_POC</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\ADF\ADF-TE-POC\ADF-TE-POC\ADF-TE-POC.xml</DocumentationFile>
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ADF-TE-POC.Swagger.xml</DocumentationFile>
+    <OutputPath>bin\$(Configuration)\$(TargetFramework)\</OutputPath>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>E:\ADF\ADF-TE-POC\ADF-TE-POC\ADF-TE-POC.xml</DocumentationFile>
-  </PropertyGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" />

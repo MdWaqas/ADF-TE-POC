@@ -70,13 +70,12 @@ jobs:
   - Build
 
   steps:
-  - task: AzureWebApp@1
+  - task: AzureRmWebAppDeployment@4
+    displayName: 'Azure App Service Deploy: adf-poc'
     inputs:
       azureSubscription: 'Confiz-SPM'
-      appType: 'webApp'
-      appName: 'adf-poc'
-      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-      deploymentMethod: 'auto'
+      WebAppName: 'adf-poc'
+      JSONFiles: '**/appsettings.json'
 
   - task: DotNetCoreCLI@2
     displayName: 'dotnet test'

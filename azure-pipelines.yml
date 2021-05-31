@@ -92,7 +92,7 @@ jobs:
     inputs:
       azureSubscription: 'Confiz-SPM'
       WebAppName: 'adf-poc'
-      package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      package: '$(build.artifactstagingdirectory)/**/*.zip'
       JSONFiles: '**/appsettings.json'
 
   - task: DotNetCoreCLI@2

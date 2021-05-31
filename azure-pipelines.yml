@@ -72,7 +72,7 @@ jobs:
       azureSubscription: 'Confiz-SPM'
       appType: 'webApp'
       appName: 'adf-poc'
-      package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+      package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
       deploymentMethod: 'auto'
 
   - task: DotNetCoreCLI@2

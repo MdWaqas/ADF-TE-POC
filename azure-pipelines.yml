@@ -6,18 +6,17 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-latest'
-
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
-
 jobs:
 - job: Build
+  
+  pool:
+    vmImage: 'windows-latest'
 
+  variables:
+    solution: '**/*.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+  
   steps:
   - task: NuGetToolInstaller@1
 
